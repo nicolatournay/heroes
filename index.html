@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="heroes-search">
+            <h1>Trouve ton Héro</h1>
+            <input type="text" name="search" id="search" v-model="searchedHero">
+        </div>
+        <div class="heroes-display">
+            <div class="heroes-pics">
+                <img v-for="(hero, index) in searchedHeroes" :src="hero.images.sm" :alt="hero.name" @click="displayHero(hero.id)">
+            </div>
+            <div v-if="displayedHero" class="heroes-details">
+                <img :src="details.images.md" :alt="details.name">
+                <div class="info">
+                    <h2>{{ details.name }}</h2>
+                    <p>Vrai nom : {{ details.biography.fullName }}</p>
+                    <p>Genre : {{ details.appearance.gender }}</p>
+                    <p>Race : {{ details.appearance.race }}</p>
+                    <i class="fa-solid fa-xmark" @click="stopDisplay"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/8f9223cc2c.js" crossorigin="anonymous"></script>
+</body>
+</html>

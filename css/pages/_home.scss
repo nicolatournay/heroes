@@ -1,0 +1,45 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.heroes-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heroes-display {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    // arrêtez le stretch des éléments enfants;
+    align-items: flex-start;
+}
+
+.heroes-pics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    img {
+        cursor: pointer;
+    }
+}
+
+.heroes-details {
+    padding-left: 2rem;
+    img {
+        display: block;
+    }
+}
+
+.info {
+    position: relative;
+}
+
+i {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
